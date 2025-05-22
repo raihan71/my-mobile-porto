@@ -1,72 +1,104 @@
 # Mobile App Development Portfolio
 
-Welcome to my mobile app development portfolio! Below is a list of apps I've built on my free time as a freelancer, along with screenshots and descriptions.
+Welcome to my mobile app development portfolio! Below is a list of apps I've built in my free time as a freelancer, along with screenshots and descriptions.
 
 ---
 
 ## Tarbiyah Sunnah Learning
 
-![photo_2021-03-08_20-21-00](https://github.com/user-attachments/assets/b4a90ee0-c83a-45c5-92ef-b6440b51ac74)
-()  
-*(Replace with your actual image URL or path)*  
+<img src="https://github.com/user-attachments/assets/b4a90ee0-c83a-45c5-92ef-b6440b51ac74" width="250" alt="Tarbiyah Sunnah Learning Screenshot" />  
 
 **Description**:  
-A brief description of the app, its purpose, and key features. Mention the technologies used (e.g., Flutter, React Native, Kotlin, Swift, Firebase, etc.).  
+Super app for learning Islamic studies by TSL. I volunteered to participate in this project.  
+
+**Stack**:  
+- React Native  
+- Material UI  
 
 **Key Features**:  
-- Feature 1  
-- Feature 2  
-- Feature 3  
+- Login  
+- Academic Calendar  
+- Play audio  
 
-**Download Link**: [Google Play](url) | [App Store](url) *(if applicable)*  
+**Download Link**: [Google Play](https://play.google.com/store/apps/details?id=com.tarbiyahsunnahapp&hl=en)  
 
 ---
 
-## [App Name 2]
+## Commuplace
 
-![App Name 2 Screenshot](image_url_or_path_2.png)  
+<img src="https://github.com/user-attachments/assets/250cb29f-d80b-4251-b4c8-73df4ed17164" width="250" alt="Commuplace Screenshot" />  
 
 **Description**:  
-A brief description of the app, its purpose, and key features.  
+Marketplace community built from scratch with Expo React Native.  
+
+**Stack**:  
+- React Expo  
+- Nativewind  
+- Firebase  
+- Clerk Auth  
 
 **Key Features**:  
-- Feature 1  
-- Feature 2  
-- Feature 3  
+- Login Auth  
+- Home  
+- Product Detail  
+- Add to Cart  
 
-**Download Link**: [Google Play](url) | [App Store](url) *(if applicable)*  
+**Download Link**: [GitHub Repo](https://github.com/raihan71/commuplace-expo)  
 
 ---
 
-## [App Name 3]
+## Gitpoint
 
-![App Name 3 Screenshot](image_url_or_path_3.png)  
+<img src="https://github.com/user-attachments/assets/9ed5f28c-153d-499a-a5d8-45986a9bba11" width="250" alt="Gitpoint Screenshot" />  
 
 **Description**:  
-A brief description of the app, its purpose, and key features.  
+GitHub in your pocket. I contributed to this open-source global project.  
+
+**Stack**:  
+- React Native  
+- i18n  
 
 **Key Features**:  
-- Feature 1  
-- Feature 2  
-- Feature 3  
+- Login Auth  
+- Profile  
+- Notifications  
 
-**Download Link**: [Google Play](url) | [App Store](url) *(if applicable)*  
-
----
-
-## Technologies & Tools
-- **Frameworks**: Flutter, React Native, etc.  
-- **Languages**: Dart, JavaScript, Kotlin, Swift, etc.  
-- **Backend**: Firebase, Node.js, AWS, etc.  
-- **Design Tools**: Figma, Adobe XD, etc.  
+**Download Link**: [Official Site](https://gitpoint.co/)  
 
 ---
 
-## Contact Me
-📧 Email: your.email@example.com  
-🔗 LinkedIn: [Your Name](linkedin_url)  
-🐙 GitHub: [Your GitHub](github_url)  
+## YourCurrency
+
+*(Screenshot coming soon)*  
+
+**Description**:  
+Toy project for a simple CRUD currency converter app.  
+
+**Stack**:  
+- React Native  
+
+**Key Features**:  
+- Home  
+- Currency Conversion  
+- Currency Selection  
+
+**Download Link**: [GitHub Repo](https://github.com/raihan71/Digicollect)  
 
 ---
+
+## Technologies & Tools  
+- **Frameworks**: React Native, Expo  
+- **Styling**: Nativewind, Material UI  
+- **Backend**: Firebase, Clerk  
+- **Tools**: GitHub, i18n  
+
+---
+
+## Contact Me  
+📧 Email: [Hello Raihan!](mailto:raihannismara@gmail.com)  
+🔗 LinkedIn: [Raihan Nismara](https://www.linkedin.com/in/raihannismara/)  
+🐙 GitHub: [raihan71](https://github.com/raihan71)  
+
+--- 
 
 ⭐ **Thanks for checking out my work!** ⭐
