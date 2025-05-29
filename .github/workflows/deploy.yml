@@ -1,6 +1,5 @@
 # .github/workflows/ci-cd.yml
 name: CI/CD Demo
-
 on:
   push:
     branches: [main]
@@ -32,6 +31,6 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > micro_aws.pem
           chmod 600 micro_aws.pem
-          ssh -v -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} '
+          ssh -v -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME}'
             cd /home/ubuntu/project/mobile-porto &&
-            git pull origin main
+            git pull origin main'
