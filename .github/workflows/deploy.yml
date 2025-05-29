@@ -23,15 +23,15 @@ jobs:
 
       - name: 🧪 Run Basic Test (opsional)
         run: echo "No tests yet"
-
-      - name: 🚀 Deploy to VPS via SCP
+        
+      - name: Deploy to EC2
         env:
-          HOST: ${{ secrets.VPS_HOST }}
+          PRIVATE_KEY: ${{ secrets.VPS_KEY }}
+          HOSTNAME: ${{ secrets.VPS_HOST }}
           USERNAME: ${{ secrets.VPS_USER }}
-          KEY: ${{ secrets.VPS_KEY }}
         run: |
-          echo "$KEY" > micro-aws.pem
-          chmod 600 micro-aws.pem
-          mkdir -p ~/.ssh
-          ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
-          ssh -i micro-aws.pem $USERNAME@$HOST 'cd project && cd mobile-porto && git pull'
+          echo "$PRIVATE_KEY" > micro_aws.pem
+          chmod 600 micro_aws.pem
+          ssh -v -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} '
+            cd /home/ubuntu/project/mobile-porto &&
+            git pull origin main
