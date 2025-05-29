@@ -1,33 +1,33 @@
-# .github/workflows/ci-cd.yml
-name: CI/CD Demo
-
+name: Deploy to EC2
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 🔄 Checkout Code
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v2
+    
+    - name: Deploy to EC2
+      env:
+        PRIVATE_KEY: ${{ secrets.VPS_KEY }}
+        HOST: ${{ secrets.VPS_HOST }}
+        USER: ${{ secrets.VPS_USER }}
+      run: |
+        echo "$PRIVATE_KEY" > micro-aws.pem && chmod 600 micro-aws.pem
+        ssh -o StrictHostKeyChecking=no -i micro-aws.pem ${USER}@${HOST} '
+        echo "Current directory: $(pwd)"
+        echo "Listing home directory:"
+        ls -la ~
 
-      - name: 📦 Install Dependencies
-        run: echo "no instalation yet"
+        REPO_URL="https://github.com/raihan71/my-mobile-porto.git"
+        BRANCH="main"
+        REPO_DIR="$HOME/my-mobile-porto
 
-      - name: 🧪 Run Basic Test (opsional)
-        run: echo "No tests yet"
-
-      - name: 🚀 Deploy to VPS via SCP
-        env:
-          HOST: ${{ secrets.VPS_HOST }}
-          USERNAME: ${{ secrets.VPS_USER }}
-          KEY: ${{ secrets.VPS_KEY }}
-        run: |
-          echo "$KEY" > micro-aws.pem
-          chmod 600 micro-aws.pem
-          mkdir -p ~/.ssh
-          scp -i micro-aws.pem -r * $USERNAME@$HOST:~/project/my-mobile-porto
-          ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
-          ssh -i micro-aws.pem $USERNAME@$HOST 'cd ~/project/my-mobile-porto'
+        if [ -d "$REPO_DIR/.git" ]; then
+          cd "$REPO_DIR"
+          git pull origin "$BRANCH"
+        else
+          git clone "$REPO_URL" "$REPO_DIR"
+          cd "$REPO_DIR"'
