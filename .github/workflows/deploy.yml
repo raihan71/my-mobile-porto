@@ -1,5 +1,6 @@
 # .github/workflows/ci-cd.yml
 name: CI/CD Demo
+
 on:
   push:
     branches: [main]
@@ -20,17 +21,18 @@ jobs:
       # - name: 📦 Install Dependencies
       #   run: npm install
 
-      - name: 🧪 Run Basic Test (opsional)
-        run: echo "No tests yet"
-        
-      - name: Deploy to EC2
+      # - name: 🧪 Run Basic Test (opsional)
+      #   run: echo "No tests yet"
+
+      - name: 🚀 Deploy to VPS via SCP
         env:
-          PRIVATE_KEY: ${{ secrets.VPS_KEY }}
-          HOSTNAME: ${{ secrets.VPS_HOST }}
+          HOST: ${{ secrets.VPS_HOST }}
           USERNAME: ${{ secrets.VPS_USER }}
+          KEY: ${{ secrets.VPS_KEY }}
         run: |
-          echo "$PRIVATE_KEY" > micro_aws.pem
-          chmod 600 micro_aws.pem
-          ssh -v -o StrictHostKeyChecking=no -i micro_aws.pem ${USERNAME}@${HOSTNAME}'
-            cd /home/ubuntu/project/mobile-porto &&
-            git pull origin main'
+          echo "$KEY" > micro-aws.pem
+          chmod 600 micro-aws.pem
+          mkdir -p .ssh
+          ssh-keyscan -H "$HOST" >> .ssh/known_hosts
+          scp -i micro-aws.pem -r * $USERNAME@$HOST:/projcet/mobile-porto
+          ssh -i micro-aws.pem $USERNAME@$HOST 'cd /project/mobiel-porto && git pull'
