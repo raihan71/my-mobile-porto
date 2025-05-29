@@ -34,5 +34,4 @@ jobs:
           chmod 600 micro-aws.pem
           mkdir -p .ssh
           ssh-keyscan -H "$HOST" >> .ssh/known_hosts
-          scp -i micro-aws.pem -r * $USERNAME@$HOST:/projcet/mobile-porto
           ssh -i micro-aws.pem $USERNAME@$HOST 'cd /project/mobiel-porto && git pull'
