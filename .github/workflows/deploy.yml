@@ -27,6 +27,7 @@ jobs:
         run: |
           echo "$KEY" > micro-aws.pem
           chmod 600 micro-aws.pem
-          mkdir -p ~/home/ubuntu/.ssh
-          ssh-keyscan -H "$HOST" >> ~/home/ubuntu/.ssh/known_hosts
+          mkdir -p ~/.ssh
+          scp -i key.pem -r * $USERNAME@$HOST:~/project/my-mobile-porto
+          ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
           ssh -i micro-aws.pem $USERNAME@$HOST 'cd ~/project/my-mobile-porto'
