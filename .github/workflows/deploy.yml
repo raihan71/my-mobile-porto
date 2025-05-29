@@ -28,6 +28,6 @@ jobs:
           echo "$KEY" > micro-aws.pem
           chmod 600 micro-aws.pem
           mkdir -p ~/.ssh
-          scp -i key.pem -r * $USERNAME@$HOST:~/project/my-mobile-porto
+          scp -i micro-aws.pem -r * $USERNAME@$HOST:~/project/my-mobile-porto
           ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
           ssh -i micro-aws.pem $USERNAME@$HOST 'cd ~/project/my-mobile-porto'
