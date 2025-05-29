@@ -31,6 +31,6 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > micro_aws.pem
           chmod 600 micro_aws.pem
-          ssh -v -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME}'
+          ssh -v -o StrictHostKeyChecking=no -i micro_aws.pem ${USERNAME}@${HOSTNAME}'
             cd /home/ubuntu/project/mobile-porto &&
             git pull origin main'
