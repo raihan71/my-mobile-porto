@@ -30,8 +30,9 @@ jobs:
           USERNAME: ${{ secrets.VPS_USER }}
           KEY: ${{ secrets.VPS_KEY }}
         run: |
-          echo "$KEY" > key.pem
-          chmod 600 key.pem
+          echo "$KEY" > micro-aws.pem
+          chmod 600 micro-aws.pem
           mkdir -p ~/.ssh
           ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
-          ssh -i micro-aws.pem $USERNAME@$HOST 'cd /project/mobiel-porto && git pull'
+           scp -i key.pem -r * $USERNAME@$HOST:~/project/mobile-porto
+          ssh -i micro-aws.pem $USERNAME@$HOST 'cd /project/mobile-porto && git pull'
